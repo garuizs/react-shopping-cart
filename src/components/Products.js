@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
+import { addToCart } from "../actions/cartActions";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
 import formatCurrency from "../util";
@@ -108,5 +109,6 @@ export default connect(
   (state) => ({ products: state.products.filteredItems }),
   {
     fetchProducts,
+    addToCart,
   }
 )(Products);
